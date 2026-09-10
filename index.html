@@ -96,6 +96,19 @@
             background-color: var(--accent-cta-hover);
         }
 
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-phone {
+            color: var(--text-white);
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
         /* Hero Section */
         .hero {
             position: relative;
@@ -105,7 +118,7 @@
             align-items: center;
             padding: 140px 20px 80px;
             margin-top: 60px;
-            overflow: hidden;
+            overflow-x: hidden;
             background: url('https://images.unsplash.com/photo-1704367630677-d7273f2cbb89?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
         }
 
@@ -1028,11 +1041,63 @@
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
             body {
                 padding-bottom: 70px;
+                overflow-x: hidden;
+            }
+
+            header {
+                padding: 14px 4%;
+            }
+
+            .logo-img {
+                height: 32px;
+            }
+
+            .header-actions {
+                gap: 10px;
+            }
+
+            .header-phone {
+                font-size: 0.8rem;
+            }
+
+            .header-schedule-btn {
+                display: none;
+            }
+
+            .header-quote-btn {
+                padding: 8px 14px;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 110px 20px 60px;
+            }
+
+            .hero-card {
+                padding: 32px 22px;
+                border-radius: 16px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-services {
+                font-size: 0.78rem;
+                line-height: 1.6;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .header-phone {
+                display: none;
             }
         }
 
@@ -1142,10 +1207,10 @@
     <!-- Header -->
     <header>
         <a href="index.html"><img src="assets/logo.png" alt="Olvera's Lawn Service" class="logo-img"></a>
-        <div style="display: flex; align-items: center; gap: 20px;">
-            <a href="tel:+14694008018" style="color: var(--text-white); text-decoration: none; font-weight: 600;">(469) 400-8018</a>
-            <a href="https://clienthub.getjobber.com/hubs/3e06ab4f-29a5-4883-8947-26d3c1eeedc1/public/requests/2409756/new" class="nav-btn" target="_blank" rel="noopener">Schedule Service</a>
-            <a href="#inquiry" class="nav-btn">Get a Quote</a>
+        <div class="header-actions">
+            <a href="tel:+14694008018" class="header-phone">(469) 400-8018</a>
+            <a href="https://clienthub.getjobber.com/hubs/3e06ab4f-29a5-4883-8947-26d3c1eeedc1/public/requests/2409756/new" class="nav-btn header-schedule-btn" target="_blank" rel="noopener">Schedule Service</a>
+            <a href="#inquiry" class="nav-btn header-quote-btn">Get a Quote</a>
         </div>
     </header>
 
@@ -1626,6 +1691,7 @@
                 <div style="padding: 8px 0; border-bottom: 1px solid #E3E7E1;">Saturday</div><div style="padding: 8px 0; border-bottom: 1px solid #E3E7E1; text-align: right; color: #56655C;">Closed</div>
                 <div style="padding: 8px 0;">Sunday</div><div style="padding: 8px 0; text-align: right; color: #56655C;">Closed</div>
             </div>
+            <p style="margin-top: 16px; font-size: 0.85rem; color: #56655C; text-align: center;">Regular hours are Monday–Friday, but weekend service may be available by request — ask us when you request your quote.</p>
         </div>
 
         <!-- Google Reviews Carousel Style (Template matched) -->
@@ -2164,6 +2230,7 @@
                     <div class="form-group">
                         <label for="prefDate">Preferred Service Date</label>
                         <input type="date" id="prefDate" name="prefDate">
+                        <small style="display: block; margin-top: 6px; color: var(--text-gray);">Weekday appointments run Monday–Friday; weekend service may be available on request.</small>
                     </div>
                     <div class="form-group">
                         <label for="details">Anything else we should know?</label>
@@ -2256,6 +2323,15 @@
 
         window.addEventListener("resize", renderReviews);
         renderReviews();
+
+        const prefDateInput = document.getElementById("prefDate");
+        if (prefDateInput) {
+            const today = new Date();
+            const todayStr = today.getFullYear() + "-" +
+                String(today.getMonth() + 1).padStart(2, "0") + "-" +
+                String(today.getDate()).padStart(2, "0");
+            prefDateInput.setAttribute("min", todayStr);
+        }
 
         const photoInput = document.getElementById("photos");
         if (photoInput) {
