@@ -514,14 +514,11 @@
                     border: 1px solid #222;
                     padding: 25px;
                     border-radius: 12px;
-                    display: flex;
+                    display: none;
                     flex-direction: column;
                     justify-content: space-between;
                 }
-                .extra-review {
-                    display: none;
-                }
-                .extra-review.show {
+                .review-card.show {
                     display: flex;
                 }
             </style>
@@ -656,7 +653,7 @@
                     <span style="font-size: 0.85rem; color: #888;">— Greg V.</span>
                 </div>
                 <!-- Review 17 -->
-                <div class="review-card extra-review">
+                <div class="review-card">
                     <div>
                         <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
                         <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Siempre educados, trabajadores y minuciosos. Los recomiendo a todos mis vecinos."</p>
@@ -664,7 +661,7 @@
                     <span style="font-size: 0.85rem; color: #888;">— Karen E.</span>
                 </div>
                 <!-- Review 18 -->
-                <div class="review-card extra-review">
+                <div class="review-card">
                     <div>
                         <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
                         <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Precios transparentes y cero cargos ocultos. Te dan exactamente lo que prometen."</p>
@@ -672,7 +669,7 @@
                     <span style="font-size: 0.85rem; color: #888;">— Anthony J.</span>
                 </div>
                 <!-- Review 19 -->
-                <div class="review-card extra-review">
+                <div class="review-card">
                     <div>
                         <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
                         <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Proceso de cotización rápido a través de su formulario web. El servicio se agendó y completó en cuestión de días."</p>
@@ -680,7 +677,7 @@
                     <span style="font-size: 0.85rem; color: #888;">— Megan B.</span>
                 </div>
                 <!-- Review 20 -->
-                <div class="review-card extra-review">
+                <div class="review-card">
                     <div>
                         <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
                         <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Increíble atención al recortar alrededor de jardineras delicadas sin dañar las plantas."</p>
@@ -688,7 +685,7 @@
                     <span style="font-size: 0.85rem; color: #888;">— Timothy W.</span>
                 </div>
                 <!-- Review 21 -->
-                <div class="review-card extra-review">
+                <div class="review-card">
                     <div>
                         <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
                         <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"El mejor equipo de mantenimiento de jardines que hemos tenido en años. Equipo altamente profesional."</p>
@@ -696,7 +693,7 @@
                     <span style="font-size: 0.85rem; color: #888;">— Danielle P.</span>
                 </div>
                 <!-- Review 22 -->
-                <div class="review-card extra-review">
+                <div class="review-card">
                     <div>
                         <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
                         <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Llegaron exactamente cuando dijeron que lo harían y terminaron toda la propiedad rápidamente."</p>
@@ -704,7 +701,7 @@
                     <span style="font-size: 0.85rem; color: #888;">— Brandon L.</span>
                 </div>
                 <!-- Review 23 -->
-                <div class="review-card extra-review">
+                <div class="review-card">
                     <div>
                         <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
                         <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Gran calidad de trabajo a un precio justo. Muy contentos con los resultados constantes."</p>
@@ -712,7 +709,7 @@
                     <span style="font-size: 0.85rem; color: #888;">— Melissa K.</span>
                 </div>
                 <!-- Review 24 -->
-                <div class="review-card extra-review">
+                <div class="review-card">
                     <div>
                         <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
                         <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Arreglaron nuestros bordes desparejos y eliminaron malezas persistentes. ¡Se ve fantástico!"</p>
@@ -720,7 +717,7 @@
                     <span style="font-size: 0.85rem; color: #888;">— Justin Z.</span>
                 </div>
                 <!-- Review 25 -->
-                <div class="review-card extra-review">
+                <div class="review-card">
                     <div>
                         <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
                         <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Nos salvaron cuando nuestro jardinero anterior dejó de aparecer. Súper confiables."</p>
@@ -728,7 +725,7 @@
                     <span style="font-size: 0.85rem; color: #888;">— Heather D.</span>
                 </div>
                 <!-- Review 26 -->
-                <div class="review-card extra-review">
+                <div class="review-card">
                     <div>
                         <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
                         <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Líneas limpias, buenos cortes, y servicio al cliente amable. No se podría pedir más."</p>
@@ -736,7 +733,7 @@
                     <span style="font-size: 0.85rem; color: #888;">— Eric M.</span>
                 </div>
                 <!-- Review 27 -->
-                <div class="review-card extra-review">
+                <div class="review-card">
                     <div>
                         <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
                         <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Se toman el tiempo extra para asegurarse de que los portones queden cerrados y todo esté seguro. Gran detalle."</p>
@@ -744,7 +741,7 @@
                     <span style="font-size: 0.85rem; color: #888;">— Kelly S.</span>
                 </div>
                 <!-- Review 28 -->
-                <div class="review-card extra-review">
+                <div class="review-card">
                     <div>
                         <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
                         <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Servicio de corte quincenal confiable que mantiene nuestro jardín luciendo limpio toda la temporada."</p>
@@ -752,7 +749,7 @@
                     <span style="font-size: 0.85rem; color: #888;">— Ryan B.</span>
                 </div>
                 <!-- Review 29 -->
-                <div class="review-card extra-review">
+                <div class="review-card">
                     <div>
                         <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
                         <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Especialistas en cuidado de jardines de primer nivel en Fort Worth. Profesionalismo de principio a fin."</p>
@@ -760,7 +757,7 @@
                     <span style="font-size: 0.85rem; color: #888;">— Crystal G.</span>
                 </div>
                 <!-- Review 30 -->
-                <div class="review-card extra-review">
+                <div class="review-card">
                     <div>
                         <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
                         <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"¡Superó todas las expectativas! El jardín se ve pulcro, ordenado y arreglado profesionalmente."</p>
@@ -906,14 +903,35 @@
             "76182", "76244", "76248"
         ];
 
-        function toggleExtraReviews() {
-            const extras = document.querySelectorAll("#reviewsGrid .extra-review");
-            const btn = document.getElementById("viewMoreReviewsBtn");
-            const isShown = extras[0] && extras[0].classList.contains("show");
+        let reviewBatchesShown = 1;
 
-            extras.forEach(card => card.classList.toggle("show", !isShown));
-            btn.textContent = isShown ? "Ver Más Reseñas" : "Ver Menos Reseñas";
+        function getReviewColumns() {
+            const w = window.innerWidth;
+            if (w <= 560) return 1;
+            if (w <= 900) return 2;
+            return 4;
         }
+
+        function renderReviews() {
+            const cards = document.querySelectorAll("#reviewsGrid .review-card");
+            const perBatch = getReviewColumns() * 4;
+            const visibleCount = Math.min(perBatch * reviewBatchesShown, cards.length);
+
+            cards.forEach((card, i) => card.classList.toggle("show", i < visibleCount));
+
+            const btn = document.getElementById("viewMoreReviewsBtn");
+            if (btn) {
+                btn.style.display = visibleCount >= cards.length ? "none" : "inline-block";
+            }
+        }
+
+        function toggleExtraReviews() {
+            reviewBatchesShown++;
+            renderReviews();
+        }
+
+        window.addEventListener("resize", renderReviews);
+        renderReviews();
 
         function checkZipCode() {
             const inputVal = document.getElementById("zipInput").value.trim();
