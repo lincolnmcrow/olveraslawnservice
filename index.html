@@ -15,10 +15,6 @@
     <meta property="og:url" content="https://www.instagram.com/olveraslawnservice/">
     <meta property="og:type" content="website">
 
-    <!-- Language Alternates -->
-    <link rel="alternate" hreflang="en" href="https://olveraslawnservice.com/index.html">
-    <link rel="alternate" hreflang="es" href="https://olveraslawnservice.com/index-es.html">
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -394,39 +390,124 @@
             margin-bottom: 30px;
         }
 
-        .insta-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            max-width: 1000px;
-            margin: 0 auto 35px auto;
-        }
-
-        .insta-box {
-            background-color: var(--card-bg);
-            height: 220px;
-            border-radius: 8px;
-            display: flex;
+        .insta-follow-card {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
+            gap: 18px;
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
-            overflow: hidden;
-            position: relative;
+            border-radius: 999px;
+            padding: 14px 28px 14px 14px;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(20, 33, 24, 0.08);
+            transition: 0.3s;
         }
 
-        .insta-box:hover {
+        .insta-follow-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 30px rgba(20, 33, 24, 0.14);
             border-color: var(--accent-green);
         }
 
-        .insta-box img {
+        .insta-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .insta-icon svg {
+            width: 26px;
+            height: 26px;
+            color: #ffffff;
+        }
+
+        .insta-handle-block {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .insta-handle-block strong {
+            font-size: 1.1rem;
+            color: var(--text-white);
+        }
+
+        .insta-handle-block small {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        .insta-arrow {
+            font-size: 1.3rem;
+            color: var(--accent-green);
+            margin-left: 4px;
+        }
+
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 14px;
+            max-width: 1100px;
+            margin: 40px auto 0 auto;
+        }
+
+        .insta-thumb {
+            position: relative;
+            display: block;
+            aspect-ratio: 9 / 16;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 14px rgba(20, 33, 24, 0.08);
+            transition: 0.3s;
+        }
+
+        .insta-thumb img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: 0.3s;
         }
 
-        .insta-box:hover img {
-            transform: scale(1.05);
+        .insta-thumb:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 22px rgba(20, 33, 24, 0.16);
+        }
+
+        .insta-thumb:hover img {
+            transform: scale(1.06);
+        }
+
+        .insta-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(20, 33, 24, 0.55);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .insta-play svg {
+            width: 16px;
+            height: 16px;
+            margin-left: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .insta-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         /* Footer */
@@ -471,7 +552,6 @@
         <a href="index.html"><img src="assets/logo.png" alt="Olvera's Lawn Service" class="logo-img"></a>
         <div style="display: flex; align-items: center; gap: 20px;">
             <a href="tel:+14694008018" style="color: var(--text-white); text-decoration: none; font-weight: 600;">(469) 400-8018</a>
-            <a href="index-es.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600; font-size: 0.85rem; border: 1px solid #E3E7E1; padding: 6px 10px; border-radius: 4px;">Español</a>
             <a href="#inquiry" class="nav-btn">Get a Quote</a>
         </div>
     </header>
@@ -559,71 +639,48 @@
     </section>
 
     <!-- Inquiry / Free Quote Section -->
-    <section class="inquiry-section" id="inquiry">
-        <div class="inquiry-container">
-            <h2>Request a <span>Free Estimate</span></h2>
-            <p>Fill out the form below and we'll get back to you quickly with a custom quote for your Fort Worth property.</p>
-
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(817) 000-0000" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="service">Select Service</label>
-                    <select id="service" name="service">
-                        <option value="mowing">Regular Mowing & Maintenance</option>
-                        <option value="cleanup">Seasonal Cleanup</option>
-                        <option value="flowerbed">Flower Bed & Mulch</option>
-                        <option value="christmaslights">Christmas Light Installation</option>
-                        <option value="other">Other Landscaping Services</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="details">Yard Details / Address</label>
-                    <textarea id="details" name="details" placeholder="Tell us a bit about your lawn size or specific needs..."></textarea>
-                </div>
-
-                <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px;">
-                    <input type="checkbox" id="agree" name="agree" required style="width: auto; margin-top: 4px;">
-                    <label for="agree" style="font-size: 0.85rem; color: var(--text-gray); font-weight: 400; margin: 0;">
-                        I agree to the <a href="terms.html" target="_blank" style="color: var(--accent-green);">Terms of Service</a>, <a href="privacy.html" target="_blank" style="color: var(--accent-green);">Privacy Policy</a>, and <a href="policies.html" target="_blank" style="color: var(--accent-green);">Weather &amp; Cancellation Policy</a>.
-                    </label>
-                </div>
-
-                <button type="submit" class="btn-main" style="width: 100%;">Submit Inquiry</button>
-            </form>
-        </div>
-    </section>
-
     <!-- Instagram Section -->
     <section class="instagram-section">
         <h2>Follow Our Work on Instagram</h2>
-        <p>See our latest transformations around Fort Worth <a href="https://www.instagram.com/olveraslawnservice/" target="_blank" style="color: var(--accent-green);">@olveraslawnservice</a></p>
+        <p>See our latest transformations around Fort Worth</p>
+
+        <a href="https://www.instagram.com/olveraslawnservice/" target="_blank" class="insta-follow-card">
+            <span class="insta-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </span>
+            <span class="insta-handle-block">
+                <strong>@olveraslawnservice</strong>
+                <small>Follow us on Instagram</small>
+            </span>
+            <span class="insta-arrow" aria-hidden="true">&rarr;</span>
+        </a>
 
         <div class="insta-grid">
-            <a href="https://www.instagram.com/olveraslawnservice/" target="_blank" class="insta-box">
-                <img src="https://images.unsplash.com/photo-1592417817098-8f3d69204b56?auto=format&fit=crop&w=500&q=80" alt="Lawn Work 1">
+            <a href="https://www.instagram.com/p/DcfeeDiu8YU/" target="_blank" class="insta-thumb">
+                <img src="assets/instagram/post-1.jpg" alt="Lawn care crew at work" loading="lazy">
+                <span class="insta-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
             </a>
-            <a href="https://www.instagram.com/olveraslawnservice/" target="_blank" class="insta-box">
-                <img src="https://images.unsplash.com/photo-1584467735871-8e853e841967?auto=format&fit=crop&w=500&q=80" alt="Lawn Work 2">
+            <a href="https://www.instagram.com/p/DcMqg_cxnGm/" target="_blank" class="insta-thumb">
+                <img src="assets/instagram/post-2.jpg" alt="Mowing a front yard" loading="lazy">
+                <span class="insta-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
             </a>
-            <a href="https://www.instagram.com/olveraslawnservice/" target="_blank" class="insta-box">
-                <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&w=500&q=80" alt="Lawn Work 3">
+            <a href="https://www.instagram.com/p/DYTvcioRJoT/" target="_blank" class="insta-thumb">
+                <img src="assets/instagram/post-3.jpg" alt="Flower bed maintenance" loading="lazy">
+                <span class="insta-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
             </a>
-            <a href="https://www.instagram.com/olveraslawnservice/" target="_blank" class="insta-box">
-                <img src="https://images.unsplash.com/photo-1557429287-b2e26467fc2b?auto=format&fit=crop&w=500&q=80" alt="Lawn Work 4">
+            <a href="https://www.instagram.com/p/DYTvC_BxHNN/" target="_blank" class="insta-thumb">
+                <img src="assets/instagram/post-4.jpg" alt="Trimming overgrown grass" loading="lazy">
+                <span class="insta-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+            </a>
+            <a href="https://www.instagram.com/p/DRsNrGSETli/" target="_blank" class="insta-thumb">
+                <img src="assets/instagram/post-5.jpg" alt="Christmas light installation" loading="lazy">
+                <span class="insta-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+            </a>
+            <a href="https://www.instagram.com/p/DRsChXVkRBC/" target="_blank" class="insta-thumb">
+                <img src="assets/instagram/post-6.jpg" alt="Seasonal cleanup crew" loading="lazy">
+                <span class="insta-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
             </a>
         </div>
-
-        <a href="https://www.instagram.com/olveraslawnservice/" target="_blank" class="btn-main" style="background: transparent; color: var(--text-white); border: 2px solid var(--accent-green);">View Full Instagram Profile</a>
     </section>
 
     <!-- HOURS, REVIEWS & MAP SECTION -->
@@ -1025,6 +1082,51 @@
     </section>
 
     <!-- Footer -->
+    <!-- Request a Free Estimate -->
+    <section class="inquiry-section" id="inquiry">
+        <div class="inquiry-container">
+            <h2>Request a <span>Free Estimate</span></h2>
+            <p>Fill out the form below and we'll get back to you quickly with a custom quote for your Fort Worth property.</p>
+
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(817) 000-0000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Select Service</label>
+                    <select id="service" name="service">
+                        <option value="mowing">Regular Mowing & Maintenance</option>
+                        <option value="cleanup">Seasonal Cleanup</option>
+                        <option value="flowerbed">Flower Bed & Mulch</option>
+                        <option value="christmaslights">Christmas Light Installation</option>
+                        <option value="other">Other Landscaping Services</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="details">Yard Details / Address</label>
+                    <textarea id="details" name="details" placeholder="Tell us a bit about your lawn size or specific needs..."></textarea>
+                </div>
+
+                <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px;">
+                    <input type="checkbox" id="agree" name="agree" required style="width: auto; margin-top: 4px;">
+                    <label for="agree" style="font-size: 0.85rem; color: var(--text-gray); font-weight: 400; margin: 0;">
+                        I agree to the <a href="terms.html" target="_blank" style="color: var(--accent-green);">Terms of Service</a>, <a href="privacy.html" target="_blank" style="color: var(--accent-green);">Privacy Policy</a>, and <a href="policies.html" target="_blank" style="color: var(--accent-green);">Weather &amp; Cancellation Policy</a>.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-main" style="width: 100%;">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2026 Olvera's Lawn Service. All rights reserved. | Fort Worth, TX</p>
         <p style="margin-top: 15px;"><a href="tel:+14694008018" style="color: var(--accent-green-bright);">(469) 400-8018</a></p>
@@ -1040,7 +1142,6 @@
             <span style="color: #E3E7E1;">•</span>
             <a href="policies.html">Weather & Cancellations</a>
         </p>
-        <p style="margin-top: 10px;">Website designed with a modern black, white, & green aesthetic.</p>
     </footer>
 
     <script>
