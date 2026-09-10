@@ -440,6 +440,244 @@
             font-weight: 600;
         }
 
+        /* Why Choose Us */
+        .why-us {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .why-us h2 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .why-us-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg-alt);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px 18px;
+            font-weight: 600;
+        }
+
+        .why-us-item .check {
+            color: #ffffff;
+            background: var(--accent-green);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        /* Service Comparison Table */
+        .service-table-section {
+            padding: 80px 5%;
+            background-color: var(--bg-alt);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .service-table-section h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .service-table-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            overflow-x: auto;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+
+        .service-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+
+        .service-table th,
+        .service-table td {
+            text-align: left;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        .service-table th {
+            background: var(--accent-green);
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .service-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .service-table td:first-child {
+            font-weight: 700;
+        }
+
+        /* Double Image Slider */
+        .gallery-slider {
+            padding: 80px 0;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .gallery-slider h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 5%;
+        }
+
+        .gallery-row {
+            display: flex;
+            gap: 16px;
+            width: max-content;
+        }
+
+        .gallery-row img {
+            width: 260px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .gallery-row.row-1 {
+            animation: scroll-left 55s linear infinite;
+            margin-bottom: 16px;
+        }
+
+        .gallery-row.row-2 {
+            animation: scroll-right 55s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        @keyframes scroll-right {
+            from { transform: translateX(-50%); }
+            to { transform: translateX(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .gallery-row.row-1,
+            .gallery-row.row-2 {
+                animation: none;
+            }
+        }
+
+        /* Multi-step Quote Wizard */
+        .wizard-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            gap: 4px;
+        }
+
+        .wizard-progress span {
+            flex: 1;
+            height: 4px;
+            background: var(--border-color);
+            border-radius: 999px;
+        }
+
+        .wizard-progress span.active {
+            background: var(--accent-green);
+        }
+
+        .wizard-step {
+            display: none;
+        }
+
+        .wizard-step.active {
+            display: block;
+        }
+
+        .wizard-step-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent-green);
+            margin-bottom: 6px;
+        }
+
+        .wizard-step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .wizard-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .wizard-nav button {
+            flex: 1;
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: var(--text-white);
+            border: 1px solid var(--border-color);
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 999px;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        .radio-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .radio-row .service-option label {
+            padding: 10px 16px;
+        }
+
+        .review-summary {
+            background: var(--bg-alt);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px 18px;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
         .btn-main {
             background-color: var(--accent-cta);
             color: #ffffff;
@@ -1285,6 +1523,94 @@
         </div>
     </section>
 
+    <!-- Why Homeowners Choose Us -->
+    <section class="why-us">
+        <h2>Why Homeowners <span style="color: var(--accent-green);">Choose Us</span></h2>
+        <div class="why-us-grid">
+            <div class="why-us-item"><span class="check">&#10003;</span> Reliable scheduling</div>
+            <div class="why-us-item"><span class="check">&#10003;</span> Fully insured</div>
+            <div class="why-us-item"><span class="check">&#10003;</span> Professional equipment</div>
+            <div class="why-us-item"><span class="check">&#10003;</span> Local DFW business</div>
+            <div class="why-us-item"><span class="check">&#10003;</span> Easy communication</div>
+            <div class="why-us-item"><span class="check">&#10003;</span> Free estimates</div>
+        </div>
+    </section>
+
+    <!-- Service Comparison Table -->
+    <section class="service-table-section">
+        <h2>Find the Right <span style="color: var(--accent-green);">Service</span></h2>
+        <div class="service-table-wrap">
+            <table class="service-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Best For</th>
+                        <th>Frequency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lawn Mowing</td>
+                        <td>Regular maintenance</td>
+                        <td>Weekly / Biweekly</td>
+                    </tr>
+                    <tr>
+                        <td>Cleanup</td>
+                        <td>Overgrown yards</td>
+                        <td>One-time</td>
+                    </tr>
+                    <tr>
+                        <td>Mulching</td>
+                        <td>Flower beds</td>
+                        <td>Seasonal</td>
+                    </tr>
+                    <tr>
+                        <td>Landscaping</td>
+                        <td>Property upgrades</td>
+                        <td>Custom</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Double Image Slider -->
+    <section class="gallery-slider">
+        <h2>Recent Work Around <span style="color: var(--accent-green);">DFW</span></h2>
+        <div class="gallery-row row-1">
+            <img src="assets/gallery/gallery-1.jpg" alt="Olvera's Lawn Service project 1">
+            <img src="assets/gallery/gallery-2.jpg" alt="Olvera's Lawn Service project 2">
+            <img src="assets/gallery/gallery-3.jpg" alt="Olvera's Lawn Service project 3">
+            <img src="assets/gallery/gallery-4.jpg" alt="Olvera's Lawn Service project 4">
+            <img src="assets/gallery/gallery-5.jpg" alt="Olvera's Lawn Service project 5">
+            <img src="assets/gallery/gallery-6.jpg" alt="Olvera's Lawn Service project 6">
+            <img src="assets/gallery/gallery-7.jpg" alt="Olvera's Lawn Service project 7">
+            <img src="assets/gallery/gallery-1.jpg" alt="Olvera's Lawn Service project 1">
+            <img src="assets/gallery/gallery-2.jpg" alt="Olvera's Lawn Service project 2">
+            <img src="assets/gallery/gallery-3.jpg" alt="Olvera's Lawn Service project 3">
+            <img src="assets/gallery/gallery-4.jpg" alt="Olvera's Lawn Service project 4">
+            <img src="assets/gallery/gallery-5.jpg" alt="Olvera's Lawn Service project 5">
+            <img src="assets/gallery/gallery-6.jpg" alt="Olvera's Lawn Service project 6">
+            <img src="assets/gallery/gallery-7.jpg" alt="Olvera's Lawn Service project 7">
+        </div>
+        <div class="gallery-row row-2">
+            <img src="assets/gallery/gallery-8.jpg" alt="Olvera's Lawn Service project 8">
+            <img src="assets/gallery/gallery-9.jpg" alt="Olvera's Lawn Service project 9">
+            <img src="assets/gallery/gallery-10.jpg" alt="Olvera's Lawn Service project 10">
+            <img src="assets/gallery/gallery-11.jpg" alt="Olvera's Lawn Service project 11">
+            <img src="assets/gallery/gallery-12.jpg" alt="Olvera's Lawn Service project 12">
+            <img src="assets/gallery/gallery-13.jpg" alt="Olvera's Lawn Service project 13">
+            <img src="assets/gallery/gallery-14.jpg" alt="Olvera's Lawn Service project 14">
+            <img src="assets/gallery/gallery-8.jpg" alt="Olvera's Lawn Service project 8">
+            <img src="assets/gallery/gallery-9.jpg" alt="Olvera's Lawn Service project 9">
+            <img src="assets/gallery/gallery-10.jpg" alt="Olvera's Lawn Service project 10">
+            <img src="assets/gallery/gallery-11.jpg" alt="Olvera's Lawn Service project 11">
+            <img src="assets/gallery/gallery-12.jpg" alt="Olvera's Lawn Service project 12">
+            <img src="assets/gallery/gallery-13.jpg" alt="Olvera's Lawn Service project 13">
+            <img src="assets/gallery/gallery-14.jpg" alt="Olvera's Lawn Service project 14">
+        </div>
+    </section>
+
     <!-- HOURS, REVIEWS & MAP SECTION -->
     <section class="info-reviews-map-section" style="padding: 80px 5%; background-color: #F6F7F2; color: #142118;">
 
@@ -1690,69 +2016,180 @@
             <h2>Request a <span>Free Estimate</span></h2>
             <p>Fill out the form below and we'll get back to you quickly with a custom quote for your Fort Worth property.</p>
 
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+            <form action="#" method="POST" id="quoteWizard">
+                <div class="wizard-progress" id="wizardProgress">
+                    <span class="active"></span><span></span><span></span><span></span><span></span><span></span>
                 </div>
 
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(817) 000-0000" required>
-                </div>
-
-                <div class="form-group">
-                    <label>What does your yard need?</label>
-                    <div class="service-picker">
-                        <div class="service-option">
-                            <input type="radio" id="svc-mowing" name="service" value="mowing" checked>
-                            <label for="svc-mowing">Lawn Mowing</label>
+                <!-- Step 1: What do you need? -->
+                <div class="wizard-step active" data-step="1">
+                    <span class="wizard-step-label">Step 1 of 6</span>
+                    <h3>What does your yard need?</h3>
+                    <div class="form-group">
+                        <div class="service-picker">
+                            <div class="service-option">
+                                <input type="radio" id="svc-mowing" name="service" value="mowing" checked>
+                                <label for="svc-mowing">Lawn Mowing</label>
+                            </div>
+                            <div class="service-option">
+                                <input type="radio" id="svc-cleanup" name="service" value="cleanup">
+                                <label for="svc-cleanup">Cleanup</label>
+                            </div>
+                            <div class="service-option">
+                                <input type="radio" id="svc-landscaping" name="service" value="landscaping">
+                                <label for="svc-landscaping">Landscaping</label>
+                            </div>
+                            <div class="service-option">
+                                <input type="radio" id="svc-trimming" name="service" value="trimming">
+                                <label for="svc-trimming">Trimming</label>
+                            </div>
+                            <div class="service-option">
+                                <input type="radio" id="svc-mulching" name="service" value="mulching">
+                                <label for="svc-mulching">Mulching</label>
+                            </div>
+                            <div class="service-option">
+                                <input type="radio" id="svc-other" name="service" value="other">
+                                <label for="svc-other">Other</label>
+                            </div>
                         </div>
-                        <div class="service-option">
-                            <input type="radio" id="svc-cleanup" name="service" value="cleanup">
-                            <label for="svc-cleanup">Cleanup</label>
-                        </div>
-                        <div class="service-option">
-                            <input type="radio" id="svc-landscaping" name="service" value="landscaping">
-                            <label for="svc-landscaping">Landscaping</label>
-                        </div>
-                        <div class="service-option">
-                            <input type="radio" id="svc-trimming" name="service" value="trimming">
-                            <label for="svc-trimming">Trimming</label>
-                        </div>
-                        <div class="service-option">
-                            <input type="radio" id="svc-mulching" name="service" value="mulching">
-                            <label for="svc-mulching">Mulching</label>
-                        </div>
-                        <div class="service-option">
-                            <input type="radio" id="svc-other" name="service" value="other">
-                            <label for="svc-other">Other</label>
-                        </div>
+                    </div>
+                    <div class="wizard-nav">
+                        <button type="button" class="btn-main wizard-next" style="width: 100%;">Next</button>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="details">Yard Details / Address</label>
-                    <textarea id="details" name="details" placeholder="Tell us a bit about your lawn size or specific needs..."></textarea>
+                <!-- Step 2: Tell us about your property -->
+                <div class="wizard-step" data-step="2">
+                    <span class="wizard-step-label">Step 2 of 6</span>
+                    <h3>Tell us about your property</h3>
+                    <div class="form-group">
+                        <label for="lawnSize">Lawn Size</label>
+                        <select id="lawnSize" name="lawnSize">
+                            <option value="small">Small (under 5,000 sq ft)</option>
+                            <option value="medium">Medium (5,000-10,000 sq ft)</option>
+                            <option value="large">Large (10,000+ sq ft)</option>
+                            <option value="unsure">Not sure</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Front Yard / Backyard / Both</label>
+                        <div class="radio-row">
+                            <div class="service-option">
+                                <input type="radio" id="area-front" name="area" value="front" checked>
+                                <label for="area-front">Front Yard</label>
+                            </div>
+                            <div class="service-option">
+                                <input type="radio" id="area-back" name="area" value="backyard">
+                                <label for="area-back">Backyard</label>
+                            </div>
+                            <div class="service-option">
+                                <input type="radio" id="area-both" name="area" value="both">
+                                <label for="area-both">Both</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>One-time or Recurring?</label>
+                        <div class="radio-row">
+                            <div class="service-option">
+                                <input type="radio" id="rec-onetime" name="recurring" value="onetime" checked>
+                                <label for="rec-onetime">One-time</label>
+                            </div>
+                            <div class="service-option">
+                                <input type="radio" id="rec-recurring" name="recurring" value="recurring">
+                                <label for="rec-recurring">Recurring</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="frequency">Frequency</label>
+                        <select id="frequency" name="frequency">
+                            <option value="weekly">Weekly</option>
+                            <option value="biweekly">Biweekly</option>
+                            <option value="seasonal">Seasonal</option>
+                            <option value="custom">Custom / One-time</option>
+                        </select>
+                    </div>
+                    <div class="wizard-nav">
+                        <button type="button" class="btn-secondary wizard-back">Back</button>
+                        <button type="button" class="btn-main wizard-next">Next</button>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="photos">Upload Photos (optional)</label>
-                    <label class="photo-upload" for="photos">
-                        <span>Click to upload photos of your yard/property</span>
-                        <input type="file" id="photos" name="photos" accept="image/*" multiple>
-                        <div id="photoFileNames"></div>
-                    </label>
+                <!-- Step 3: Upload photos -->
+                <div class="wizard-step" data-step="3">
+                    <span class="wizard-step-label">Step 3 of 6</span>
+                    <h3>Upload Photos</h3>
+                    <div class="form-group">
+                        <label for="photos">Upload 3-5 photos of your yard/property (optional)</label>
+                        <label class="photo-upload" for="photos">
+                            <span>Click to upload photos</span>
+                            <input type="file" id="photos" name="photos" accept="image/*" multiple>
+                            <div id="photoFileNames"></div>
+                        </label>
+                    </div>
+                    <div class="wizard-nav">
+                        <button type="button" class="btn-secondary wizard-back">Back</button>
+                        <button type="button" class="btn-main wizard-next">Next</button>
+                    </div>
                 </div>
 
-                <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px;">
-                    <input type="checkbox" id="agree" name="agree" required style="width: auto; margin-top: 4px;">
-                    <label for="agree" style="font-size: 0.85rem; color: var(--text-gray); font-weight: 400; margin: 0;">
-                        I agree to the <a href="terms.html" target="_blank" style="color: var(--accent-green);">Terms of Service</a>, <a href="privacy.html" target="_blank" style="color: var(--accent-green);">Privacy Policy</a>, and <a href="policies.html" target="_blank" style="color: var(--accent-green);">Weather &amp; Cancellation Policy</a>.
-                    </label>
+                <!-- Step 4: Contact information -->
+                <div class="wizard-step" data-step="4">
+                    <span class="wizard-step-label">Step 4 of 6</span>
+                    <h3>Your Contact Information</h3>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(817) 000-0000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" placeholder="Street address, city, zip" required>
+                    </div>
+                    <div class="wizard-nav">
+                        <button type="button" class="btn-secondary wizard-back">Back</button>
+                        <button type="button" class="btn-main wizard-next">Next</button>
+                    </div>
                 </div>
 
-                <button type="submit" class="btn-main" style="width: 100%;">Submit Inquiry</button>
+                <!-- Step 5: Preferred date -->
+                <div class="wizard-step" data-step="5">
+                    <span class="wizard-step-label">Step 5 of 6</span>
+                    <h3>Pick a Preferred Date</h3>
+                    <div class="form-group">
+                        <label for="prefDate">Preferred Service Date</label>
+                        <input type="date" id="prefDate" name="prefDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="details">Anything else we should know?</label>
+                        <textarea id="details" name="details" placeholder="Optional notes about your lawn or specific needs..."></textarea>
+                    </div>
+                    <div class="wizard-nav">
+                        <button type="button" class="btn-secondary wizard-back">Back</button>
+                        <button type="button" class="btn-main wizard-next">Next</button>
+                    </div>
+                </div>
+
+                <!-- Step 6: Submit -->
+                <div class="wizard-step" data-step="6">
+                    <span class="wizard-step-label">Step 6 of 6</span>
+                    <h3>Review &amp; Submit</h3>
+                    <div class="review-summary" id="reviewSummary"></div>
+                    <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="agree" name="agree" required style="width: auto; margin-top: 4px;">
+                        <label for="agree" style="font-size: 0.85rem; color: var(--text-gray); font-weight: 400; margin: 0;">
+                            I agree to the <a href="terms.html" target="_blank" style="color: var(--accent-green);">Terms of Service</a>, <a href="privacy.html" target="_blank" style="color: var(--accent-green);">Privacy Policy</a>, and <a href="policies.html" target="_blank" style="color: var(--accent-green);">Weather &amp; Cancellation Policy</a>.
+                        </label>
+                    </div>
+                    <div class="wizard-nav">
+                        <button type="button" class="btn-secondary wizard-back">Back</button>
+                        <button type="submit" class="btn-main">Submit Inquiry</button>
+                    </div>
+                </div>
             </form>
         </div>
     </section>
@@ -1828,6 +2265,70 @@
                     : "";
             });
         }
+
+        (function () {
+            const form = document.getElementById("quoteWizard");
+            if (!form) return;
+
+            const steps = Array.from(form.querySelectorAll(".wizard-step"));
+            const progressSpans = Array.from(document.getElementById("wizardProgress").children);
+            let current = 1;
+
+            function showStep(n) {
+                current = n;
+                steps.forEach(step => {
+                    step.classList.toggle("active", Number(step.dataset.step) === n);
+                });
+                progressSpans.forEach((span, i) => {
+                    span.classList.toggle("active", i < n);
+                });
+                if (n === steps.length) buildReview();
+                form.closest(".inquiry-container").scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+
+            function buildReview() {
+                const service = form.querySelector('input[name="service"]:checked');
+                const area = form.querySelector('input[name="area"]:checked');
+                const recurring = form.querySelector('input[name="recurring"]:checked');
+                const lawnSize = form.querySelector("#lawnSize");
+                const frequency = form.querySelector("#frequency");
+                const name = form.querySelector("#name").value;
+                const phone = form.querySelector("#phone").value;
+                const address = form.querySelector("#address").value;
+                const prefDate = form.querySelector("#prefDate").value;
+                const photoCount = form.querySelector("#photos").files.length;
+
+                const rows = [
+                    ["Service", service ? service.nextElementSibling.textContent : ""],
+                    ["Lawn Size", lawnSize.options[lawnSize.selectedIndex].text],
+                    ["Area", area ? area.nextElementSibling.textContent : ""],
+                    ["Type", recurring ? recurring.nextElementSibling.textContent : ""],
+                    ["Frequency", frequency.options[frequency.selectedIndex].text],
+                    ["Photos", photoCount ? `${photoCount} attached` : "None"],
+                    ["Name", name || "—"],
+                    ["Phone", phone || "—"],
+                    ["Address", address || "—"],
+                    ["Preferred Date", prefDate || "—"]
+                ];
+
+                document.getElementById("reviewSummary").innerHTML = rows
+                    .map(([label, value]) => `<strong>${label}:</strong> ${value}`)
+                    .join("<br>");
+            }
+
+            form.addEventListener("click", (e) => {
+                if (e.target.classList.contains("wizard-next")) {
+                    const stepEl = steps[current - 1];
+                    const required = stepEl.querySelectorAll("[required]");
+                    for (const field of required) {
+                        if (!field.reportValidity()) return;
+                    }
+                    if (current < steps.length) showStep(current + 1);
+                } else if (e.target.classList.contains("wizard-back")) {
+                    if (current > 1) showStep(current - 1);
+                }
+            });
+        })();
 
         function checkZipCode() {
             const inputVal = document.getElementById("zipInput").value.trim();
