@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olvera's Lawn Service | Servicio de Jardinería en Fort Worth, TX</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Open Graph Meta Tags for Link Previews -->
+    <meta property="og:title" content="Olvera's Lawn Service | Fort Worth, TX">
+    <meta property="og:description" content="Servicio profesional de corte, bordeado y mantenimiento de jardines en Fort Worth. ¡Conozca nuestro trabajo!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/lincolnmcrow/olveraslawnservice/main/assets/social.jpg">
+    <meta property="og:url" content="https://www.instagram.com/olveraslawnservice/">
+    <meta property="og:type" content="website">
+
+    <!-- Language Alternates -->
+    <link rel="alternate" hreflang="en" href="https://olveraslawnservice.com/index.html">
+    <link rel="alternate" hreflang="es" href="https://olveraslawnservice.com/index-es.html">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS STYLING */
+        :root {
+            --bg-color: #0d0d0d;
+            --card-bg: #1a1a1a;
+            --text-white: #ffffff;
+            --text-gray: #b0b0b0;
+            --accent-green: #2fe640;
+            --accent-green-hover: #22b930;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1, h2, .logo {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        /* Header / Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(13, 13, 13, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        .logo span {
+            color: var(--accent-green);
+        }
+
+        .logo-img {
+            height: 42px;
+        }
+
+        .nav-btn {
+            background-color: var(--accent-green);
+            color: var(--bg-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--accent-green-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 60px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558904541-efa873a8c669?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            max-width: 800px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero h1 span {
+            color: var(--accent-green);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn-main {
+            background-color: var(--accent-green);
+            color: var(--bg-color);
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 255, 102, 0.3);
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-main:hover {
+            background-color: var(--accent-green-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .services p.subtitle {
+            color: var(--text-gray);
+            margin-bottom: 50px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 10px;
+            border: 1px solid #222;
+            text-align: left;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-white);
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Inquiry Section */
+        .inquiry-section {
+            padding: 80px 5%;
+            background-color: #121212;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            display: flex;
+            justify-content: center;
+        }
+
+        .inquiry-container {
+            max-width: 600px;
+            width: 100%;
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #222;
+        }
+
+        .inquiry-container h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .inquiry-container h2 span {
+            color: var(--accent-green);
+        }
+
+        .inquiry-container p {
+            color: var(--text-gray);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-white);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #0d0d0d;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: var(--text-white);
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-green);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        /* Local Banner */
+        .local-banner {
+            background-color: #111;
+            padding: 60px 5%;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .local-banner h2 {
+            color: var(--accent-green);
+            margin-bottom: 15px;
+        }
+
+        /* Instagram Integration Section */
+        .instagram-section {
+            padding: 80px 5%;
+            background-color: #111;
+            text-align: center;
+        }
+
+        .instagram-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .instagram-section p {
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            margin: 0 auto 35px auto;
+        }
+
+        .insta-box {
+            background-color: var(--card-bg);
+            height: 220px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #222;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .insta-box:hover {
+            border-color: var(--accent-green);
+        }
+
+        .insta-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .insta-box:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: #080808;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+        }
+
+        footer a {
+            color: var(--accent-green);
+            text-decoration: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="index-es.html"><img src="assets/logo.png" alt="Olvera's Lawn Service" class="logo-img"></a>
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <a href="tel:+14694008018" style="color: var(--text-white); text-decoration: none; font-weight: 600;">(469) 400-8018</a>
+            <a href="index.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600; font-size: 0.85rem; border: 1px solid #333; padding: 6px 10px; border-radius: 4px;">English</a>
+            <a href="#inquiry" class="nav-btn">Solicitar Cotización</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Cuidado Profesional de Césped en <span>Fort Worth, TX</span></h1>
+        <p>Servicios confiables y de primera calidad de corte, bordeado y mantenimiento de propiedades para mantener su jardín impecable en cada temporada de Texas.</p>
+        <a href="#inquiry" class="btn-main">Solicitar una Cotización Gratis</a>
+    </section>
+
+    <!-- Local Callout -->
+    <section class="local-banner">
+        <h2>Sirviendo con Orgullo a Fort Worth y Áreas Circundantes</h2>
+        <p>Con licencia, asegurados y comprometidos con la perfección absoluta para los propietarios locales del Norte de Texas.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Nuestros Servicios Profesionales</h2>
+        <p class="subtitle">Lo que podemos hacer por su jardín</p>
+
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="icon">🌿</div>
+                <h3>Corte y Bordeado</h3>
+                <p>Cortes precisos, bordes de acera nítidos y limpieza soplada para mantener su propiedad luciendo impecable semanal o quincenalmente.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🍂</div>
+                <h3>Limpiezas de Temporada</h3>
+                <p>Eliminamos hojas caídas, ramas muertas y escombros para preparar su césped para el cambio de clima del Norte de Texas.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🪴</div>
+                <h3>Mantenimiento de Jardineras</h3>
+                <p>Control de maleza, instalación de mantillo fresco y remodelación de camas para darle a su paisajismo un acabado de lujo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry / Free Quote Section -->
+    <section class="inquiry-section" id="inquiry">
+        <div class="inquiry-container">
+            <h2>Solicite una <span>Cotización Gratuita</span></h2>
+            <p>Complete el siguiente formulario y nos pondremos en contacto con usted rápidamente con una cotización personalizada para su propiedad en Fort Worth.</p>
+
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Su Nombre</label>
+                    <input type="text" id="name" name="name" placeholder="Juan Pérez" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Número de Teléfono</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(817) 000-0000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Seleccione un Servicio</label>
+                    <select id="service" name="service">
+                        <option value="mowing">Corte y Mantenimiento Regular</option>
+                        <option value="cleanup">Limpieza de Temporada</option>
+                        <option value="flowerbed">Jardineras y Mantillo</option>
+                        <option value="other">Otros Servicios de Paisajismo</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="details">Detalles del Jardín / Dirección</label>
+                    <textarea id="details" name="details" placeholder="Cuéntenos un poco sobre el tamaño de su césped o necesidades específicas..."></textarea>
+                </div>
+
+                <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px;">
+                    <input type="checkbox" id="agree" name="agree" required style="width: auto; margin-top: 4px;">
+                    <label for="agree" style="font-size: 0.85rem; color: var(--text-gray); font-weight: 400; margin: 0;">
+                        Acepto los <a href="terms-es.html" target="_blank" style="color: var(--accent-green);">Términos de Servicio</a>, la <a href="privacy-es.html" target="_blank" style="color: var(--accent-green);">Política de Privacidad</a>, y la <a href="policies-es.html" target="_blank" style="color: var(--accent-green);">Política de Clima y Cancelaciones</a>.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-main" style="width: 100%;">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram-section">
+        <h2>Síguenos en Instagram</h2>
+        <p>Vea nuestras últimas transformaciones en Fort Worth <a href="https://www.instagram.com/olveraslawnservice/" target="_blank" style="color: var(--accent-green);">@olveraslawnservice</a></p>
+
+        <div class="insta-grid">
+            <a href="https://www.instagram.com/olveraslawnservice/" target="_blank" class="insta-box">
+                <img src="https://images.unsplash.com/photo-1592417817098-8f3d69204b56?auto=format&fit=crop&w=500&q=80" alt="Trabajo de Jardinería 1">
+            </a>
+            <a href="https://www.instagram.com/olveraslawnservice/" target="_blank" class="insta-box">
+                <img src="https://images.unsplash.com/photo-1584467735871-8e853e841967?auto=format&fit=crop&w=500&q=80" alt="Trabajo de Jardinería 2">
+            </a>
+            <a href="https://www.instagram.com/olveraslawnservice/" target="_blank" class="insta-box">
+                <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&w=500&q=80" alt="Trabajo de Jardinería 3">
+            </a>
+            <a href="https://www.instagram.com/olveraslawnservice/" target="_blank" class="insta-box">
+                <img src="https://images.unsplash.com/photo-1557429287-b2e26467fc2b?auto=format&fit=crop&w=500&q=80" alt="Trabajo de Jardinería 4">
+            </a>
+        </div>
+
+        <a href="https://www.instagram.com/olveraslawnservice/" target="_blank" class="btn-main" style="background: transparent; color: var(--text-white); border: 2px solid var(--accent-green);">Ver Perfil Completo de Instagram</a>
+    </section>
+
+    <!-- HOURS, REVIEWS & MAP SECTION -->
+    <section class="info-reviews-map-section" style="padding: 80px 5%; background-color: #0d0d0d; color: #ffffff;">
+
+        <!-- Hours Container -->
+        <div class="hours-container" style="max-width: 800px; margin: 0 auto 60px auto; background-color: #1a1a1a; padding: 30px; border-radius: 12px; border: 1px solid #222;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 20px; text-align: center; color: #ffffff;">Horario de <span style="color: #00ff66;">Atención</span></h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 1.05rem;">
+                <div style="padding: 8px 0; border-bottom: 1px solid #222;">Lunes</div><div style="padding: 8px 0; border-bottom: 1px solid #222; text-align: right; color: #00ff66;">6:30 AM – 6:00 PM</div>
+                <div style="padding: 8px 0; border-bottom: 1px solid #222;">Martes</div><div style="padding: 8px 0; border-bottom: 1px solid #222; text-align: right; color: #00ff66;">6:30 AM – 6:00 PM</div>
+                <div style="padding: 8px 0; border-bottom: 1px solid #222;">Miércoles</div><div style="padding: 8px 0; border-bottom: 1px solid #222; text-align: right; color: #00ff66;">6:30 AM – 6:00 PM</div>
+                <div style="padding: 8px 0; border-bottom: 1px solid #222;">Jueves</div><div style="padding: 8px 0; border-bottom: 1px solid #222; text-align: right; color: #00ff66;">6:30 AM – 6:00 PM</div>
+                <div style="padding: 8px 0; border-bottom: 1px solid #222;">Viernes</div><div style="padding: 8px 0; border-bottom: 1px solid #222; text-align: right; color: #00ff66;">6:30 AM – 6:00 PM</div>
+                <div style="padding: 8px 0; border-bottom: 1px solid #222;">Sábado</div><div style="padding: 8px 0; border-bottom: 1px solid #222; text-align: right; color: #b0b0b0;">Cerrado</div>
+                <div style="padding: 8px 0;">Domingo</div><div style="padding: 8px 0; text-align: right; color: #b0b0b0;">Cerrado</div>
+            </div>
+        </div>
+
+        <!-- Google Reviews Carousel Style (Template matched) -->
+        <div class="reviews-section" style="margin-bottom: 60px;">
+            <h2 style="font-size: 2rem; margin-bottom: 10px; text-align: center;">Reseñas de <span style="color: #00ff66;">Clientes</span></h2>
+            <p style="text-align: center; color: #b0b0b0; margin-bottom: 30px;">Lo que dicen los propietarios de Fort Worth sobre nuestro trabajo</p>
+
+            <style>
+                .reviews-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 20px;
+                }
+                @media (max-width: 900px) {
+                    .reviews-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+                @media (max-width: 560px) {
+                    .reviews-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+                .review-card {
+                    background-color: #1a1a1a;
+                    border: 1px solid #222;
+                    padding: 25px;
+                    border-radius: 12px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+                .extra-review {
+                    display: none;
+                }
+                .extra-review.show {
+                    display: flex;
+                }
+            </style>
+
+            <div class="reviews-grid" id="reviewsGrid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"¡Absolutos profesionales! Llegaron puntuales en Fort Worth y transformaron por completo nuestro jardín descuidado en una obra maestra impecable."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Marcus R.</span>
+                </div>
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"El bordeado que hacen en las aceras es perfecto. El mejor servicio de jardinería que hemos contratado en el condado de Tarrant, sin duda."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Sarah T.</span>
+                </div>
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Muy fáciles de comunicarse y excelentes precios. Siempre confiables cada semana, incluso en el calor brutal del verano."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— David L.</span>
+                </div>
+                <!-- Review 4 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Se encargaron de nuestra limpieza de primavera y del mantillo de las jardineras. Una diferencia como de noche y día. ¡Muy recomendados!"</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Jessica M.</span>
+                </div>
+                <!-- Review 5 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Equipo muy educado, equipo de trabajo limpio, y soplan todo el concreto antes de irse. Servicio de primer nivel."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Kevin B.</span>
+                </div>
+                <!-- Review 6 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Responden rápido a los mensajes y mantienen horarios de corte consistentes. Exactamente lo que necesita un propietario ocupado."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Amanda G.</span>
+                </div>
+                <!-- Review 7 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Nuestro césped Bermuda nunca se había visto tan verde y saludable. Realmente saben cómo cuidar el césped de Texas."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Robert H.</span>
+                </div>
+                <!-- Review 8 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Precios justos e increíble atención al detalle. Tratan su propiedad con respeto."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Brian W.</span>
+                </div>
+                <!-- Review 9 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Puntuales, confiables, y siempre dejan el jardín luciendo impecable. ¡Cinco estrellas en todos los aspectos!"</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Emily K.</span>
+                </div>
+                <!-- Review 10 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"El rediseño de las jardineras cambió por completo el atractivo exterior de nuestra casa. ¡Trabajo increíble!"</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Chris P.</span>
+                </div>
+                <!-- Review 11 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Servicio semanal confiable. Nunca tengo que preocuparme de si van a cortar mi césped."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Rachel D.</span>
+                </div>
+                <!-- Review 12 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Excelente comunicación y equipo de primera. Se nota que están orgullosos de su trabajo."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Jason S.</span>
+                </div>
+                <!-- Review 13 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Limpiaron todas nuestras pesadas hojas de otoño en un abrir y cerrar de ojos. Excelente trabajo llevándose todo."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Nicole F.</span>
+                </div>
+                <!-- Review 14 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Actitud profesional y ejecución impecable. Vale cada centavo."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Steven C.</span>
+                </div>
+                <!-- Review 15 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Un excelente negocio local que apoya a la comunidad de Fort Worth. Seguiré usándolos a largo plazo."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Laura N.</span>
+                </div>
+                <!-- Review 16 -->
+                <div class="review-card">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Mi patio trasero era una selva absoluta antes de que ellos intervinieran. Ahora parece un campo de golf."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Greg V.</span>
+                </div>
+                <!-- Review 17 -->
+                <div class="review-card extra-review">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Siempre educados, trabajadores y minuciosos. Los recomiendo a todos mis vecinos."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Karen E.</span>
+                </div>
+                <!-- Review 18 -->
+                <div class="review-card extra-review">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Precios transparentes y cero cargos ocultos. Te dan exactamente lo que prometen."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Anthony J.</span>
+                </div>
+                <!-- Review 19 -->
+                <div class="review-card extra-review">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Proceso de cotización rápido a través de su formulario web. El servicio se agendó y completó en cuestión de días."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Megan B.</span>
+                </div>
+                <!-- Review 20 -->
+                <div class="review-card extra-review">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Increíble atención al recortar alrededor de jardineras delicadas sin dañar las plantas."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Timothy W.</span>
+                </div>
+                <!-- Review 21 -->
+                <div class="review-card extra-review">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"El mejor equipo de mantenimiento de jardines que hemos tenido en años. Equipo altamente profesional."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Danielle P.</span>
+                </div>
+                <!-- Review 22 -->
+                <div class="review-card extra-review">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Llegaron exactamente cuando dijeron que lo harían y terminaron toda la propiedad rápidamente."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Brandon L.</span>
+                </div>
+                <!-- Review 23 -->
+                <div class="review-card extra-review">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Gran calidad de trabajo a un precio justo. Muy contentos con los resultados constantes."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Melissa K.</span>
+                </div>
+                <!-- Review 24 -->
+                <div class="review-card extra-review">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Arreglaron nuestros bordes desparejos y eliminaron malezas persistentes. ¡Se ve fantástico!"</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Justin Z.</span>
+                </div>
+                <!-- Review 25 -->
+                <div class="review-card extra-review">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Nos salvaron cuando nuestro jardinero anterior dejó de aparecer. Súper confiables."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Heather D.</span>
+                </div>
+                <!-- Review 26 -->
+                <div class="review-card extra-review">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Líneas limpias, buenos cortes, y servicio al cliente amable. No se podría pedir más."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Eric M.</span>
+                </div>
+                <!-- Review 27 -->
+                <div class="review-card extra-review">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Se toman el tiempo extra para asegurarse de que los portones queden cerrados y todo esté seguro. Gran detalle."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Kelly S.</span>
+                </div>
+                <!-- Review 28 -->
+                <div class="review-card extra-review">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Servicio de corte quincenal confiable que mantiene nuestro jardín luciendo limpio toda la temporada."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Ryan B.</span>
+                </div>
+                <!-- Review 29 -->
+                <div class="review-card extra-review">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"Especialistas en cuidado de jardines de primer nivel en Fort Worth. Profesionalismo de principio a fin."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Crystal G.</span>
+                </div>
+                <!-- Review 30 -->
+                <div class="review-card extra-review">
+                    <div>
+                        <div style="color: #00ff66; font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                        <p style="font-size: 0.95rem; color: #dddddd; margin-bottom: 15px;">"¡Superó todas las expectativas! El jardín se ve pulcro, ordenado y arreglado profesionalmente."</p>
+                    </div>
+                    <span style="font-size: 0.85rem; color: #888;">— Nathan Q.</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <button type="button" id="viewMoreReviewsBtn" onclick="toggleExtraReviews()" class="btn-main" style="background: transparent; color: var(--text-white); border: 2px solid var(--accent-green);">Ver Más Reseñas</button>
+                <a href="https://maps.app.goo.gl/SnnECYZm9AeuJ9aq8" target="_blank" rel="noopener" class="btn-main" style="background: transparent; color: var(--text-white); border: 2px solid var(--accent-green);">Dejar una Reseña</a>
+            </div>
+        </div>
+
+        <!-- Google Maps Area Embed -->
+        <div class="map-container" style="max-width: 1000px; margin: 0 auto; background-color: #1a1a1a; padding: 20px; border-radius: 12px; border: 1px solid #222;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 15px; text-align: center; color: #ffffff;">Área de <span style="color: #00ff66;">Servicio</span></h2>
+            <p style="text-align: center; color: #b0b0b0; margin-bottom: 20px; font-size: 0.95rem;">Sirviendo con orgullo a Fort Worth, TX y comunidades circundantes</p>
+            <div style="width: 100%; height: 400px; border-radius: 8px; overflow: hidden;">
+                <iframe
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d214560.54876790757!2d-97.51406836955078!3d32.75548839999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e6e0ea4f57b6d%3A0x7494301ef72265d6!2sFort%20Worth%2C%20TX!5e0!3m2!1sen!2sus!4v1700000000000">
+                </iframe>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Service Area Checker Section -->
+    <section id="service-checker" style="background-color: #0d0d0d; padding: 60px 20px; text-align: center; font-family: 'Poppins', sans-serif;">
+      <div style="max-width: 600px; margin: 0 auto; background-color: #1a1a1a; padding: 40px; border-radius: 12px; border: 1px solid #333;">
+        <h2 style="color: #ffffff; font-family: 'Anton', sans-serif; font-size: 2rem; letter-spacing: 1px; margin-bottom: 10px;">
+          VERIFIQUE SU CÓDIGO POSTAL
+        </h2>
+        <p style="color: #b0b0b0; font-size: 0.95rem; margin-bottom: 25px;">
+          Ingrese su código postal del área de Fort Worth para confirmar que damos servicio en su vecindario.
+        </p>
+
+        <!-- Zip Form -->
+        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+          <input
+            type="text"
+            id="zipInput"
+            placeholder="Ingrese Código Postal (ej. 76107)"
+            maxlength="5"
+            style="padding: 14px 18px; font-size: 1rem; border-radius: 6px; border: 1px solid #444; background-color: #0d0d0d; color: #fff; outline: none; width: 240px; max-width: 100%;"
+          />
+          <button
+            type="button"
+            onclick="checkZipCode()"
+            style="background-color: #2fe640; color: #0d0d0d; font-family: 'Anton', sans-serif; font-size: 1rem; letter-spacing: 0.5px; padding: 14px 24px; border: none; border-radius: 6px; cursor: pointer; transition: background 0.2s;"
+            onmouseover="this.style.backgroundColor='#22b930'"
+            onmouseout="this.style.backgroundColor='#2fe640'"
+          >
+            VERIFICAR DISPONIBILIDAD
+          </button>
+        </div>
+
+        <!-- Result Feedback Box -->
+        <div id="zipResult" style="margin-top: 20px; font-size: 1rem; font-weight: 500; display: none;"></div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="background-color: #0d0d0d; padding: 60px 20px; font-family: 'Poppins', sans-serif; color: #ffffff;">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h2 style="font-family: 'Anton', sans-serif; font-size: 2.2rem; letter-spacing: 1px; text-align: center; margin-bottom: 40px; color: #2fe640;">
+          PREGUNTAS FRECUENTES
+        </h2>
+
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <!-- FAQ Item 1 -->
+          <div style="background-color: #1a1a1a; padding: 24px; border-radius: 8px; border: 1px solid #333;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 8px; color: #fff;">¿Necesito estar en casa cuando le den servicio a mi jardín?</h3>
+            <p style="color: #b0b0b0; font-size: 0.95rem; line-height: 1.5; margin: 0;">
+              No, no necesita estar en casa siempre que nuestro equipo tenga acceso claro y sin obstáculos a su jardín (portones sin seguro, mascotas resguardadas adentro).
+            </p>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div style="background-color: #1a1a1a; padding: 24px; border-radius: 8px; border: 1px solid #333;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 8px; color: #fff;">¿Qué sucede si llueve en mi día de servicio programado?</h3>
+            <p style="color: #b0b0b0; font-size: 0.95rem; line-height: 1.5; margin: 0;">
+              La lluvia y el césped mojado pueden dañar su jardín. En caso de mal clima, nuestro horario se ajusta automáticamente de 1 a 2 días. Consulte nuestra <a href="policies-es.html" style="color: #2fe640; text-decoration: underline;">Política de Clima y Cancelaciones</a> para más detalles.
+            </p>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div style="background-color: #1a1a1a; padding: 24px; border-radius: 8px; border: 1px solid #333;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 8px; color: #fff;">¿Qué métodos de pago aceptan?</h3>
+            <p style="color: #b0b0b0; font-size: 0.95rem; line-height: 1.5; margin: 0;">
+              Aceptamos todas las tarjetas de crédito/débito principales mediante facturación electrónica segura. Todos los servicios se rigen por nuestros <a href="terms-es.html" style="color: #2fe640; text-decoration: underline;">Términos de Servicio</a> estándar.
+            </p>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div style="background-color: #1a1a1a; padding: 24px; border-radius: 8px; border: 1px solid #333;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 8px; color: #fff;">¿Cómo se protege mi información personal?</h3>
+            <p style="color: #b0b0b0; font-size: 0.95rem; line-height: 1.5; margin: 0;">
+              Respetamos su privacidad y solo utilizamos sus datos para programar y realizar el servicio en su propiedad. Lea más en nuestra <a href="privacy-es.html" style="color: #2fe640; text-decoration: underline;">Política de Privacidad</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Olvera's Lawn Service. Todos los derechos reservados. | Fort Worth, TX</p>
+        <p style="margin-top: 15px;"><a href="tel:+14694008018" style="color: var(--accent-green);">(469) 400-8018</a></p>
+        <p style="margin-top: 15px;">
+            <a href="https://www.facebook.com/people/Olveras-lawn-service/61583833652152/" target="_blank" rel="noopener">Facebook</a>
+            &nbsp;|&nbsp;
+            <a href="https://www.instagram.com/olveraslawnservice/" target="_blank" rel="noopener">Instagram</a>
+        </p>
+        <p style="margin-top: 15px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+            <a href="terms-es.html">Términos de Servicio</a>
+            <span style="color: #444;">•</span>
+            <a href="privacy-es.html">Política de Privacidad</a>
+            <span style="color: #444;">•</span>
+            <a href="policies-es.html">Clima y Cancelaciones</a>
+        </p>
+        <p style="margin-top: 10px;">Sitio web diseñado con una estética moderna en negro, blanco y verde.</p>
+    </footer>
+
+    <script>
+        // Zip codes within the business's actual Google Maps service area
+        // (Fort Worth + Haltom City, Richland Hills, North Richland Hills, Watauga,
+        // Keller, Southlake, Colleyville, Grapevine, Euless, Bedford, Hurst, Azle,
+        // Lake Worth, White Settlement, Benbrook, Crowley, Burleson, Mansfield)
+        const servicedZips = [
+            "76020", "76021", "76022", "76028", "76034", "76036", "76039", "76040",
+            "76051", "76053", "76054", "76063", "76092", "76097",
+            "76102", "76103", "76104", "76105", "76106", "76107", "76108", "76109",
+            "76110", "76111", "76112", "76114", "76115", "76116", "76117", "76118",
+            "76119", "76120", "76123", "76126", "76129", "76131", "76132", "76133",
+            "76134", "76135", "76137", "76140", "76148", "76177", "76179", "76180",
+            "76182", "76244", "76248"
+        ];
+
+        function toggleExtraReviews() {
+            const extras = document.querySelectorAll("#reviewsGrid .extra-review");
+            const btn = document.getElementById("viewMoreReviewsBtn");
+            const isShown = extras[0] && extras[0].classList.contains("show");
+
+            extras.forEach(card => card.classList.toggle("show", !isShown));
+            btn.textContent = isShown ? "Ver Más Reseñas" : "Ver Menos Reseñas";
+        }
+
+        function checkZipCode() {
+            const inputVal = document.getElementById("zipInput").value.trim();
+            const resultBox = document.getElementById("zipResult");
+
+            resultBox.style.display = "block";
+
+            if (!/^\d{5}$/.test(inputVal)) {
+                resultBox.style.color = "#ff5c5c";
+                resultBox.style.backgroundColor = "rgba(255, 92, 92, 0.1)";
+                resultBox.style.padding = "12px";
+                resultBox.style.borderRadius = "6px";
+                resultBox.innerText = "Por favor ingrese un código postal válido de 5 dígitos.";
+                return;
+            }
+
+            if (servicedZips.includes(inputVal)) {
+                resultBox.style.color = "#2fe640";
+                resultBox.style.backgroundColor = "rgba(47, 230, 64, 0.1)";
+                resultBox.style.padding = "12px";
+                resultBox.style.borderRadius = "6px";
+                resultBox.innerHTML = `✓ ¡Buenas noticias! Damos servicio regularmente en <strong>${inputVal}</strong>. <a href="#inquiry" style="color: #2fe640; text-decoration: underline; margin-left: 5px;">¡Obtenga su cotización gratis ahora!</a>`;
+            } else {
+                resultBox.style.color = "#ffaa00";
+                resultBox.style.backgroundColor = "rgba(255, 170, 0, 0.1)";
+                resultBox.style.padding = "12px";
+                resultBox.style.borderRadius = "6px";
+                resultBox.innerHTML = `⚠️ Actualmente no operamos en <strong>${inputVal}</strong> en una ruta regular, pero contáctenos de todas formas—es posible que aún podamos ayudar.`;
+            }
+        }
+    </script>
+</body>
+</html>
