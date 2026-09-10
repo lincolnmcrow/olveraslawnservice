@@ -498,6 +498,11 @@
             var card = document.getElementById('heroCard');
             if (!video || !card) return;
 
+            video.playbackRate = 0.8;
+            video.addEventListener('playing', function () {
+                video.playbackRate = 0.8;
+            });
+
             function reveal() {
                 card.classList.add('is-visible');
             }
