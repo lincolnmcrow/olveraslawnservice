@@ -2016,7 +2016,8 @@
             <h2>Request a <span>Free Estimate</span></h2>
             <p>Fill out the form below and we'll get back to you quickly with a custom quote for your Fort Worth property.</p>
 
-            <form action="#" method="POST" id="quoteWizard">
+            <form id="quoteWizard" name="quote-request" method="POST" action="/thank-you.html" data-netlify="true" enctype="multipart/form-data">
+                <input type="hidden" name="form-name" value="quote-request">
                 <div class="wizard-progress" id="wizardProgress">
                     <span class="active"></span><span></span><span></span><span></span><span></span><span></span>
                 </div>
