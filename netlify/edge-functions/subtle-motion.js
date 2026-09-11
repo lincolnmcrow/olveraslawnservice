@@ -1,5 +1,3 @@
-import type { Config, Context } from "@netlify/edge-functions";
-
 const motionStyles = `
 <style id="olvera-subtle-motion">
   /* Subtle motion layer: visual polish only, no layout/content changes. */
@@ -141,7 +139,7 @@ const motionScript = `
 })();
 </script>`;
 
-export default async (_req: Request, context: Context) => {
+export default async (_req, context) => {
   const response = await context.next();
   const contentType = response.headers.get("content-type") || "";
 
@@ -159,7 +157,7 @@ export default async (_req: Request, context: Context) => {
   });
 };
 
-export const config: Config = {
+export const config = {
   path: "/*",
   onError: "bypass"
 };
