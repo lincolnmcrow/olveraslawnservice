@@ -1272,7 +1272,7 @@
                 <a href="#inquiry" class="btn-main">Get My Free Quote</a>
                 <a href="tel:+14694008018" class="btn-outline">Call Olvera</a>
             </div>
-            <p class="hero-services">Mowing &bull; Landscaping &bull; Cleanups &bull; Trimming &bull; Mulching</p>
+            <p class="hero-services">Mowing &bull; Landscaping &bull; Cleanups &bull; Trimming &bull; Mulching &bull; Fertilization</p>
         </div>
     </section>
 
@@ -1312,11 +1312,14 @@
         <h2>Proudly <span style="color: var(--accent-green);">Serving</span></h2>
         <ul class="serving-list">
             <li class="highlight">Fort Worth</li>
+            <li>Saginaw</li>
+            <li>Watauga</li>
+            <li>North Richland Hills</li>
+            <li>Haltom City</li>
             <li>Arlington</li>
-            <li>Grand Prairie</li>
-            <li>Mansfield</li>
-            <li>Dallas</li>
-            <li>Surrounding DFW Areas</li>
+            <li>Lake Worth</li>
+            <li>White Settlement</li>
+            <li>Benbrook</li>
         </ul>
     </section>
 
@@ -1415,6 +1418,11 @@
                 <div class="icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5.6.6 1.15 1.28 1.41 2.5"></path></svg></div>
                 <h3>Christmas Light Installation</h3>
                 <p>Professional hanging, testing, and takedown of holiday lights for your roofline, trees, and landscaping.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3"></path><path d="M12 19v3"></path><path d="M4.22 4.22l2.12 2.12"></path><path d="M17.66 17.66l2.12 2.12"></path><path d="M2 12h3"></path><path d="M19 12h3"></path><path d="M4.22 19.78l2.12-2.12"></path><path d="M17.66 6.34l2.12-2.12"></path></svg></div>
+                <h3>Fertilization</h3>
+                <p>Seasonal fertilizer treatments tailored to North Texas soil to keep your lawn thick, green, and healthy year-round.</p>
             </div>
         </div>
     </section>
@@ -1674,6 +1682,11 @@
                         <td>Landscaping</td>
                         <td>Property upgrades</td>
                         <td>Custom</td>
+                    </tr>
+                    <tr>
+                        <td>Fertilization</td>
+                        <td>Thicker, greener grass</td>
+                        <td>Seasonal</td>
                     </tr>
                 </tbody>
             </table>
@@ -2156,6 +2169,10 @@
                                 <label for="svc-mulching">Mulching</label>
                             </div>
                             <div class="service-option">
+                                <input type="radio" id="svc-fertilization" name="service" value="fertilization">
+                                <label for="svc-fertilization">Fertilization</label>
+                            </div>
+                            <div class="service-option">
                                 <input type="radio" id="svc-other" name="service" value="other">
                                 <label for="svc-other">Other</label>
                             </div>
@@ -2321,18 +2338,20 @@
     </footer>
 
     <script>
-        // Zip codes within the business's actual Google Maps service area
-        // (Fort Worth + Haltom City, Richland Hills, North Richland Hills, Watauga,
-        // Keller, Southlake, Colleyville, Grapevine, Euless, Bedford, Hurst, Azle,
-        // Lake Worth, White Settlement, Benbrook, Crowley, Burleson, Mansfield)
+        // Zip codes within the business's actual service area:
+        // Fort Worth, Saginaw, Watauga, North Richland Hills, Haltom City,
+        // Arlington, Lake Worth, White Settlement, Benbrook
         const servicedZips = [
-            "76020", "76021", "76022", "76028", "76034", "76036", "76039", "76040",
-            "76051", "76053", "76054", "76063", "76092", "76097",
+            // Fort Worth (incl. Haltom City, N. Richland Hills, Saginaw,
+            // Lake Worth, White Settlement, Benbrook, Watauga)
             "76102", "76103", "76104", "76105", "76106", "76107", "76108", "76109",
             "76110", "76111", "76112", "76114", "76115", "76116", "76117", "76118",
             "76119", "76120", "76123", "76126", "76129", "76131", "76132", "76133",
             "76134", "76135", "76137", "76140", "76148", "76177", "76179", "76180",
-            "76182", "76244", "76248"
+            "76182",
+            // Arlington
+            "76001", "76002", "76006", "76010", "76011", "76012", "76013", "76014",
+            "76015", "76016", "76017", "76018", "76040"
         ];
 
         let reviewBatchesShown = 1;
