@@ -132,6 +132,29 @@
             z-index: 0;
         }
 
+        .hero-play-btn {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            z-index: 2;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(20, 33, 24, 0.6);
+            color: #ffffff;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 3px;
+        }
+
+        .hero-play-btn:hover {
+            background: rgba(20, 33, 24, 0.8);
+        }
+
         .hero-card {
             position: relative;
             z-index: 1;
@@ -1222,9 +1245,10 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <video id="heroVideo" class="hero-video" autoplay muted playsinline poster="https://images.unsplash.com/photo-1704367630677-d7273f2cbb89?auto=format&fit=crop&w=1920&q=80">
+        <video id="heroVideo" class="hero-video" autoplay muted playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1704367630677-d7273f2cbb89?auto=format&fit=crop&w=1920&q=80">
             <source src="assets/hero-lawn.mp4" type="video/mp4">
         </video>
+        <button type="button" id="heroPlayBtn" class="hero-play-btn" aria-label="Play background video" hidden>&#9658;</button>
         <div class="hero-card" id="heroCard">
             <span class="hero-eyebrow">Lawn Care, Done Right</span>
             <h1>A Better Looking <span>Yard Starts Here</span></h1>
@@ -1263,6 +1287,21 @@
             });
             video.addEventListener('error', reveal);
             setTimeout(reveal, 15000);
+
+            var playBtn = document.getElementById('heroPlayBtn');
+            var playPromise = video.play();
+            if (playPromise && playPromise.catch) {
+                playPromise.catch(function () {
+                    if (playBtn) {
+                        playBtn.hidden = false;
+                        playBtn.addEventListener('click', function () {
+                            video.play().then(function () {
+                                playBtn.hidden = true;
+                            }).catch(function () {});
+                        });
+                    }
+                });
+            }
         })();
     </script>
 
