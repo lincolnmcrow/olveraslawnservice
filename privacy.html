@@ -94,6 +94,8 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-W36ZPFXP2P"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-W36ZPFXP2P');</script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href^="mailto:"]');if(a)gtag('event',a.getAttribute('href').indexOf('tel:')===0?'phone_click':'email_click',{link_url:a.getAttribute('href')})},true);</script>
+<script>(function(){try{var s=sessionStorage,k='crow_src';if(!s.getItem(k)){var q=new URLSearchParams(location.search),r='';try{r=new URL(document.referrer).hostname.replace(/^www\./,'')}catch(e){}if(r===location.hostname.replace(/^www\./,''))r='';s.setItem(k,JSON.stringify({s:(q.get('utm_source')||r||'direct')+(q.get('utm_medium')?' / '+q.get('utm_medium'):''),l:location.pathname}))}document.addEventListener('DOMContentLoaded',function(){var v=JSON.parse(s.getItem(k)||'{}');document.querySelectorAll('input[name=lead_source]').forEach(function(i){i.value=v.s||''});document.querySelectorAll('input[name=lead_landing]').forEach(function(i){i.value=v.l||''})})}catch(e){}})();</script>
 </head>
 <body>
 
