@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /handover.html
+
+Sitemap: https://olveraslawnservice.net/sitemap.xml
